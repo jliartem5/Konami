@@ -81,7 +81,10 @@
         <!-- Tweet -->
 
         <footer>
-
+            <table class="table" border="0" cellspacing="5" cellpadding="5">
+                <tr><th colspan="0" id="titre_tweet">Last tweets</th></tr>
+                <tr><td>Tweet1</td><td>Tweet2</td><td>Tweet3</td></tr>
+            </table>
 
         </footer>
         <!-- Fin Tweet -->
