@@ -7,17 +7,18 @@
  */
 
 /**
- * Description of Projet
+ * Description of Participant
  *
  * @author jian
  */
-class Projet extends AppModel{
+class Participant extends AppModel{
+    
     public $hasAndBelongsToMany  = array(
-        'Participants'=>array(
-            'className'=>'Participant',
+        'Projets'=>array(
+            'className'=>'Projet',
             'joinTable'=>'projet_participant',
-            'foreignKey'=>'projet_id',
-            'associationForeignKey'=>'participant_id',
+            'foreignKey'=>'participant_id',
+            'associationForeignKey'=>'projet_id',
             'unique'=>false
         )
     );
