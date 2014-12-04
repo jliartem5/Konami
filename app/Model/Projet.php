@@ -7,10 +7,14 @@
  */
 
 /**
- * Description of Posts
+ * Description of Projet
  *
  * @author jian
  */
-class Posts extends AppModel {
-
+class Projet extends AppModel{
+    public $hasMany = array(
+        'Projet participants'=>array(
+            'className'=>'Participant'
+        )
+    );
 }
