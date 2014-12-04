@@ -11,18 +11,49 @@
  *
  * @author jian
  */
-class UserController extends AppController{
-    public function restre(){
+class UserController extends AppController {
+
+    public function index() {
         
     }
-    
-    public function login(){
-        
+
+    public function _login($user){
+        $this->Session->write("user", $user);
+        return $this->redirect(array(
+            ''
+        ));
     }
     
-    public function logout(){
+    public function regist() {
+        if ($this->request->is('post')) {
+            if ($this->request->data['user_type'] == 'association') {
+                $this->Association->create();
+                if ($this->Association->save($this->request->data)) {
+                    $this->Session->setFlash(__("Your account has been saved."));
+                    return $this->_login($this->Association->getInsertID());
+                }
+            } else {
+                $this->Participant->create();
+                if ($this->Participant->save($this->request->data)) {
+                    $this->Session->setFlash(__("Your account has been saved."));
+                    return $this->_login($this->Participant->getInsertID());
+                }
+            }
+        }
+        
         
     }
-    
-    
+
+    public function login() {
+        if ($this->request->is('post')) {
+            
+        }
+    }
+
+    public function logout() {
+        if ($this->request->is('post')) {
+            
+        }
+    }
+
 }

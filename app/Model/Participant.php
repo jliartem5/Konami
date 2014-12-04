@@ -12,7 +12,6 @@
  * @author jian
  */
 class Participant extends AppModel{
-    
     public $hasAndBelongsToMany  = array(
         'Projets'=>array(
             'className'=>'Projet',

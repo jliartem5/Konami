@@ -12,9 +12,6 @@
  * @author jian
  */
 class ProjetController extends AppController {
-    
-    
-
     public function index() {
         $project_list = $this->Projet->find('all');
         $this->set('projets', $project_list);
