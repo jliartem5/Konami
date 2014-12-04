@@ -1,13 +1,3 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 4 déc. 2014, 21:33:11
-    Author     : Arles Mathieu
-*/
-
 body {
 	position: absolute;
 	left: 10%;
@@ -15,41 +5,55 @@ body {
 	height: 100%;
 	background-color: grey;
 	font-family: "Times New Roman", Georgia, Serif;
-	border: solid 1px black;
 }
 
 header {
 	position:relative;
 	width: 100%;
-	border-radius: 5px;
 }
 
 footer {
 	position: relative;
-	border: solid black 2px;
-	top: 70%;
+	top: 65%;
 	width: 100%;
-	height: 10%;
+	height: 15%;
+	background-color: white;
+	border-radius: 5px;
 }
 
 #image_header {
 	position: relative;
 	width: 100%;
-	height: 100px;
+	height: 15%;
 	background-color: #8CD3CB;
+	top: 5px;
 	border-top-radius: 5px;
 }
 
 #titre_appli {
+	display: inline-block;
 	position: relative;
 	top: 5px;
+	width:100%;
 	text-align: center;
 	text-decoration-line:underline overline;
 	-moz-text-decoration-line:underline overline; /* Code for Firefox */
 }
 
 #slogan {
+	display:inline-block;
 	position: relative;
 	left: 50%;
 	font-style: italic;
+}
+
+#titre_tweet {
+	font-style: italic;
+	text-align: center;	
+}
+
+footer table {
+	border: solid 2px black;
+	position: relative;
+	height: 100%;
 }
