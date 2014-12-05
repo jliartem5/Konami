@@ -73,3 +73,8 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 /nbproject/private/
+app/tmp/cache/persistent/myapp_cake_core_cake_dev_fr
+
+app/tmp/cache/persistent/myapp_cake_core_file_map
+
+app/tmp/cache/persistent/myapp_cake_core_file_map
