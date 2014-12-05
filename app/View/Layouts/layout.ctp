@@ -13,8 +13,10 @@
 
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="css/style.css" type="text/css">
-
+        <?php
+            echo $this->Html->css('style.css');
+        ?>
+       
     </head>
     <body id="layout" onload="">
 

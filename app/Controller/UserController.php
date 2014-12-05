@@ -13,17 +13,19 @@
  */
 class UserController extends AppController {
 
+    var $uses = array('Participant', 'Association');
+
     public function index() {
         
     }
 
-    public function _login($user){
+    public function _login($user) {
         $this->Session->write("user", $user);
         return $this->redirect(array(
-            ''
+                    'action' => 'index'
         ));
     }
-    
+
     public function regist() {
         if ($this->request->is('post')) {
             if ($this->request->data['user_type'] == 'association') {
@@ -40,19 +42,23 @@ class UserController extends AppController {
                 }
             }
         }
-        
-        
     }
 
     public function login() {
         if ($this->request->is('post')) {
-            
+            $user = $this->Participant->findByLogin($this->request->data['login']);
+            if ($user != null) {
+                if ($user->password = $this->request->data['password']) {
+                    return $this->_login($user);
+                }
+            }
         }
+        $this->Session->setFlash(__("Unable to connect."));
     }
 
     public function logout() {
-        if ($this->request->is('post')) {
-            
+        if ($this->Session->check('user')) {
+            $this->Session->delete('user');
         }
     }
 
