@@ -22,7 +22,7 @@ class UserController extends AppController {
     public function _login($user) {
         $this->Session->write("user", $user);
         return $this->redirect(array(
-                    'action' => 'index'
+                    'action' => 'index', 'controller' => 'Projet'
         ));
     }
 
@@ -46,20 +46,23 @@ class UserController extends AppController {
 
     public function login() {
         if ($this->request->is('post')) {
-            $user = $this->Participant->findByLogin($this->request->data['login']);
+            $user = $this->Participant->findByLogin($this->request->data['Participant']['login']);
             if ($user != null) {
-                if ($user->password = $this->request->data['password']) {
+                if ($user['Participant']['password'] == $this->request->data['Participant']['password']) {
                     return $this->_login($user);
                 }
             }
+            $this->set('error', __("Unable to connect."));
         }
-        $this->Session->setFlash(__("Unable to connect."));
     }
 
     public function logout() {
         if ($this->Session->check('user')) {
             $this->Session->delete('user');
+            
         }
+        return $this->redirect(array('controller'=>'Projet', 'action'=>'index'));
     }
+    
 
 }
